@@ -1,3 +1,5 @@
+package br.com.academy.threads.src.model;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Random;
@@ -28,7 +30,7 @@ public class Car {
         return color;
     }
 
-    public void mover() {
+    public void move() {
         if (combustivel > 0) {
             Random rand = new Random();
             int sortx = rand.nextInt(30) - 10;

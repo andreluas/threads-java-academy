@@ -1,4 +1,5 @@
-import javax.swing.JFrame;
+package br.com.academy.threads.src.UI;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +7,9 @@ import java.util.Random;
 
 import javax.swing.*;
 import javax.swing.border.*;
+
+import br.com.academy.threads.src.model.Car;
+
 
 public class FrameUI extends JFrame {
     private JPanel jPanel2;
@@ -57,7 +61,7 @@ public class FrameUI extends JFrame {
             carros = new ArrayList<Car>();
             for (int i = 0; i < 10; i++) {
                 Car c = new Car(rand.nextInt(800), rand.nextInt(600), rand.nextInt(50), defineColor());
-                c.mover();
+                c.move();
                 carros.add(c);
             }
 
