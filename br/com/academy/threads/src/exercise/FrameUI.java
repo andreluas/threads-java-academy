@@ -1,4 +1,4 @@
-package br.com.academy.threads.src.UI;
+package br.com.academy.threads.src.exercise;
 
 import java.awt.*;
 import java.util.ArrayList;
