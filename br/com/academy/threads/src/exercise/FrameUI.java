@@ -12,7 +12,8 @@ import br.com.academy.threads.src.model.Car;
 
 
 public class FrameUI extends JFrame {
-    private JPanel jPanel2;
+    private static final long serialVersionUID = 1L;
+	private JPanel jPanel2;
 
     public FrameUI() {
         initComponents();
@@ -21,11 +22,16 @@ public class FrameUI extends JFrame {
 
     private void initComponents() {
         jPanel2 = new Panel2();
+     
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
         this.setContentPane(jPanel2);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        pack();
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(1100, 600);
+    
+        
+        
+
     }
 
     public static void main(String args[]) {
@@ -66,7 +72,8 @@ public class FrameUI extends JFrame {
             }
 
             // TODO : Me ajude ! Meus carros não estão desenhando!!!
-            while (true) {
+            int i = 10;
+            while (i < 10) {
                 carros.forEach(c -> c.move());
                 Panel2.this.repaint();
                 try {
@@ -74,6 +81,7 @@ public class FrameUI extends JFrame {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                i++;
             }
         }
 
