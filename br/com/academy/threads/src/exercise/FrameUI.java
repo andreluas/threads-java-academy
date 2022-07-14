@@ -72,10 +72,11 @@ public class FrameUI extends JFrame {
             }
 
             // TODO : Me ajude ! Meus carros não estão desenhando!!!
-            int i = 10;
+            int i = 0;
             while (i < 10) {
                 carros.forEach(c -> c.move());
                 Panel2.this.repaint();
+
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
