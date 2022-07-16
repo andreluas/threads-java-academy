@@ -5,12 +5,14 @@ import java.awt.Graphics;
 import java.util.Random;
 
 public class Car {
+    private int id;
     private int x;
     private int y;
     private Color color;
     private int combustivel;
 
-    public Car(int x, int y, int combustivel, Color color) {
+    public Car(int id, int x, int y, int combustivel, Color color) {
+        this.id = id;
         this.x = x;
         this.y = y;
         this.combustivel = combustivel;
@@ -53,8 +55,25 @@ public class Car {
         g.drawRect(getX(), getY(), 30, 30);
         if (combustivel < 0) {
             g.drawString("X", getX(), getY() + 10);
-            // System.out.println("Necessário abastecer o veiculo");
+            System.out.println("Necessário abastecer o veiculo");
         }
-
     }
+
+    public int getCombustivel() {
+        return combustivel;
+    }
+
+    public void setCombustivel(int combustivel) {
+        this.combustivel = combustivel;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
 }
