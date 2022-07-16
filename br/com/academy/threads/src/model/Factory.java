@@ -17,11 +17,13 @@ public class Factory {
 
     public void abastecerCar(Car car) {
 
-        if (combustivel > 0) {
-            car.setCombustivel(50);
-            combustivel -= 50;
-        } else {
-            System.out.println("Fabrica sem combustivel");
+        synchronized (this) {
+            if (combustivel > 0) {
+                car.setCombustivel(50);
+                combustivel -= 50;
+            } else {
+                System.out.println("Fabrica sem combustivel");
+            }
         }
     }
 
