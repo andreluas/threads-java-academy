@@ -55,7 +55,7 @@ public class Car {
         g.drawRect(getX(), getY(), 30, 30);
         if (combustivel < 0) {
             g.drawString("X", getX(), getY() + 10);
-            System.out.println("Necessário abastecer o veiculo");
+            // System.out.println("Necessário abastecer o veiculo");
         }
     }
 
