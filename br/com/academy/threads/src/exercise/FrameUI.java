@@ -17,6 +17,7 @@ import br.com.academy.threads.src.model.Car;
 import br.com.academy.threads.src.model.Factory;
 import br.com.academy.threads.src.service.AbasteceCarros;
 import br.com.academy.threads.src.service.AbasteceFabrica;
+import br.com.academy.threads.src.service.MovimentaCarro;
 
 public class FrameUI extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -38,7 +39,11 @@ public class FrameUI extends JFrame {
         setSize(1100, 600);
 
         initThreadFactory();
+
+        jPanel2.initMovimentaCarro();
+
         initThreadFactoryCar();
+        // initMovimentaCarro();
     }
 
     public void initThreadFactory() {
@@ -51,6 +56,14 @@ public class FrameUI extends JFrame {
         Thread threadFactoryCarros = new Thread(new AbasteceCarros(factory, carros));
         threadFactoryCarros.start();
     }
+
+    // public void initMovimentaCarro() {
+    //     List<Car> carros = jPanel2.getCarros();
+    //     for (Car car : carros) {
+    //         Thread threadFactoryMovimentaCarro = new Thread(new MovimentaCarro(car));
+    //         threadFactoryMovimentaCarro.start();
+    //     }
+    // }
 
     public static void main(String args[]) {
         EventQueue.invokeLater(new Runnable() {
@@ -102,6 +115,14 @@ public class FrameUI extends JFrame {
                 // e.printStackTrace();
                 // }
                 i++;
+            }
+        }
+
+        public void initMovimentaCarro() {
+            for (Car car : carros) {
+                Thread threadFactoryMovimentaCarro = new Thread(new MovimentaCarro(car));
+                threadFactoryMovimentaCarro.start();
+                Panel2.this.repaint();
             }
         }
 
