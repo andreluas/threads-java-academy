@@ -37,13 +37,6 @@ public class FrameUI extends JFrame {
         this.setContentPane(jPanel2);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(1100, 600);
-
-        initThreadFactory();
-
-        jPanel2.initMovimentaCarro();
-
-        initThreadFactoryCar();
-        // initMovimentaCarro();
     }
 
     public void initThreadFactory() {
@@ -57,18 +50,24 @@ public class FrameUI extends JFrame {
         threadFactoryCarros.start();
     }
 
-    // public void initMovimentaCarro() {
-    //     List<Car> carros = jPanel2.getCarros();
-    //     for (Car car : carros) {
-    //         Thread threadFactoryMovimentaCarro = new Thread(new MovimentaCarro(car));
-    //         threadFactoryMovimentaCarro.start();
-    //     }
-    // }
+    public void initMovimentaCarro() {
+        List<Car> carros = jPanel2.getCarros();
+        for (Car car : carros) {
+            Thread threadFactoryMovimentaCarro = new Thread(new MovimentaCarro(car));
+            threadFactoryMovimentaCarro.start();
+        }
+    }
 
     public static void main(String args[]) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrameUI().setVisible(true);
+                FrameUI frame = new FrameUI();
+                frame.setVisible(true);
+
+                frame.initThreadFactory();
+                frame.initThreadFactoryCar();
+                
+                frame.initMovimentaCarro();
             }
         });
     }
@@ -108,26 +107,8 @@ public class FrameUI extends JFrame {
             while (i <= carros.size()) {
                 carros.forEach(c -> c.move());
                 Panel2.this.repaint();
-
-                // try {
-                // Thread.sleep(1000);
-                // } catch (InterruptedException e) {
-                // e.printStackTrace();
-                // }
                 i++;
             }
-        }
-
-        public void initMovimentaCarro() {
-            for (Car car : carros) {
-                Thread threadFactoryMovimentaCarro = new Thread(new MovimentaCarro(car));
-                threadFactoryMovimentaCarro.start();
-                Panel2.this.repaint();
-            }
-        }
-
-        public List<Car> getCarros() {
-            return carros;
         }
 
         @Override
@@ -138,6 +119,9 @@ public class FrameUI extends JFrame {
                 c.draw(g);
             }
         }
-    }
 
+        public List<Car> getCarros() {
+            return carros;
+        }
+    }
 }
