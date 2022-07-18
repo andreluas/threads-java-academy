@@ -66,13 +66,13 @@ public class FrameUI extends JFrame {
 
                 frame.initThreadFactory();
                 frame.initThreadFactoryCar();
-                
+
                 frame.initMovimentaCarro();
             }
         });
     }
 
-    class Panel2 extends JPanel {
+    public class Panel2 extends JPanel {
 
         private List<Car> carros;
 
