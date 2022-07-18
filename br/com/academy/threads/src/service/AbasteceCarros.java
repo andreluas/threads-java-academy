@@ -1,28 +1,28 @@
 package br.com.academy.threads.src.service;
 
-import java.util.List;
-
 import br.com.academy.threads.src.model.Car;
 import br.com.academy.threads.src.model.Factory;
 
 public class AbasteceCarros implements Runnable {
 
     private Factory factory;
-    private List<Car> carros;
+    private Car car;
 
-    public AbasteceCarros(Factory factory, List<Car> carros) {
+    public AbasteceCarros(Factory factory, Car car) {
         this.factory = factory;
-        this.carros = carros;
+        this.car = car;
     }
 
     @Override
     public void run() {
-        for (Car car : carros) {
+        while (true) {
             try {
-                System.out.println("Abastecendo carro: " + car.getId());
-                Thread.sleep(5000);
-                factory.abastecerCar(car);
-                System.out.println(car.getId() + "abastecido");
+                if (car.getCombustivel() < 0) {
+                    System.out.println("Abastecendo carro: " + car.getId());
+                    Thread.sleep(5000);
+                    factory.abastecerCar(car);
+                    System.out.println(car.getId() + "abastecido");
+                }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

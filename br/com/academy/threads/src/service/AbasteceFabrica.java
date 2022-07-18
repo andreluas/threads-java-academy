@@ -12,7 +12,6 @@ public class AbasteceFabrica implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Começando abastecimento da Fabrica:");
         while (true) {
             try {
                 System.out.println("Fabrica com: " + factory.getCombustivel() + " litros.");

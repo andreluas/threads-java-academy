@@ -18,7 +18,7 @@ public class Factory {
     public void abastecerCar(Car car) {
 
         synchronized (this) {
-            if (combustivel > 0) {
+            if (combustivel >= 50) {
                 car.setCombustivel(50);
                 combustivel -= 50;
             } else {

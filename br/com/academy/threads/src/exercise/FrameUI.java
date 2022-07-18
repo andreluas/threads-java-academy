@@ -46,8 +46,10 @@ public class FrameUI extends JFrame {
 
     public void initThreadFactoryCar() {
         List<Car> carros = jPanel2.getCarros();
-        Thread threadFactoryCarros = new Thread(new AbasteceCarros(factory, carros));
-        threadFactoryCarros.start();
+        for (Car car : carros) {
+            Thread threadFactoryCarros = new Thread(new AbasteceCarros(factory, car));
+            threadFactoryCarros.start();
+        }
     }
 
     public void initMovimentaCarro() {
@@ -65,19 +67,9 @@ public class FrameUI extends JFrame {
                 frame.setVisible(true);
 
                 frame.initThreadFactory();
-                // frame.initThreadFactoryCar();
+                frame.initThreadFactoryCar();
 
                 frame.initMovimentaCarro();
-
-
-                while (true) {
-                    try {
-                        Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                        // TODO Auto-generated catch block
-                    }
-                    frame.repaint();
-                }
             }
         });
     }
@@ -105,7 +97,7 @@ public class FrameUI extends JFrame {
 
             // Cria 10 novos carros
             carros = new ArrayList<Car>();
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 3; i++) {
                 Car c = new Car(rand.nextInt(10), rand.nextInt(800), rand.nextInt(600), rand.nextInt(50),
                         defineColor());
                 // c.move();
@@ -115,9 +107,9 @@ public class FrameUI extends JFrame {
             // TODO : Me ajude ! Meus carros não estão desenhando!!!
             // int i = 0;
             // while (i <= carros.size()) {
-            //     carros.forEach(c -> c.move());
-            //     Panel2.this.repaint();
-            //     i++;
+            // carros.forEach(c -> c.move());
+            // Panel2.this.repaint();
+            // i++;
             // }
         }
 
