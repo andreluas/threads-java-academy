@@ -65,9 +65,19 @@ public class FrameUI extends JFrame {
                 frame.setVisible(true);
 
                 frame.initThreadFactory();
-                frame.initThreadFactoryCar();
+                // frame.initThreadFactoryCar();
 
                 frame.initMovimentaCarro();
+
+
+                while (true) {
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        // TODO Auto-generated catch block
+                    }
+                    frame.repaint();
+                }
             }
         });
     }
@@ -98,17 +108,17 @@ public class FrameUI extends JFrame {
             for (int i = 0; i < 10; i++) {
                 Car c = new Car(rand.nextInt(10), rand.nextInt(800), rand.nextInt(600), rand.nextInt(50),
                         defineColor());
-                c.move();
+                // c.move();
                 carros.add(c);
             }
 
             // TODO : Me ajude ! Meus carros não estão desenhando!!!
-            int i = 0;
-            while (i <= carros.size()) {
-                carros.forEach(c -> c.move());
-                Panel2.this.repaint();
-                i++;
-            }
+            // int i = 0;
+            // while (i <= carros.size()) {
+            //     carros.forEach(c -> c.move());
+            //     Panel2.this.repaint();
+            //     i++;
+            // }
         }
 
         @Override

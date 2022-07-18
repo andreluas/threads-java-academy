@@ -12,11 +12,13 @@ public class MovimentaCarro implements Runnable {
 
     @Override
     public void run() {
-        while (car.getCombustivel() > 0) {
+        while (true) {
             try {
-                System.out.println("Movendo carro: " + car.getId());
-                Thread.sleep(5000);
-                car.move();
+                if (car.getCombustivel() > 0) {
+                    System.out.println("Movendo carro: " + car.getId() + " combustivel: " + car.getCombustivel());
+                    car.move();
+                    Thread.sleep(5000);
+                }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
