@@ -19,8 +19,8 @@ public class AbasteceCarros implements Runnable {
             try {
                 if (car.getCombustivel() <= 0) {
                     System.out.println("Abastecendo carro: " + car.getId());
-                    Thread.sleep(5000);
                     factory.abastecerCar(car);
+                    Thread.sleep(5000);
                     System.out.println("Carro: " + car.getId() + " abastecido");
                 }
             } catch (InterruptedException e) {

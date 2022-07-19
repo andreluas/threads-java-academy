@@ -12,8 +12,13 @@ public class PainelRefresh implements Runnable {
 
     @Override
     public void run() {
-        while(true) {
-            panel.repaint();        
+        while (true) {
+            try {
+                panel.repaint();
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
