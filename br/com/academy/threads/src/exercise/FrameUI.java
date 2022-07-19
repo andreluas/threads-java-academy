@@ -18,6 +18,7 @@ import br.com.academy.threads.src.model.Factory;
 import br.com.academy.threads.src.service.AbasteceCarros;
 import br.com.academy.threads.src.service.AbasteceFabrica;
 import br.com.academy.threads.src.service.MovimentaCarro;
+import br.com.academy.threads.src.service.PainelRefresh;
 
 public class FrameUI extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -60,11 +61,18 @@ public class FrameUI extends JFrame {
         }
     }
 
+    public void initRefresh() {
+        Thread threadRefresh = new Thread(new PainelRefresh(jPanel2));
+        threadRefresh.start();
+    }
+
     public static void main(String args[]) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 FrameUI frame = new FrameUI();
                 frame.setVisible(true);
+
+                frame.initRefresh();
 
                 frame.initThreadFactory();
                 frame.initThreadFactoryCar();
