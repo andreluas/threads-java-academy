@@ -61,10 +61,10 @@ public class FrameUI extends JFrame {
         }
     }
 
-    // public void initRefresh() {
-    //     Thread threadRefresh = new Thread(new PainelRefresh(jPanel2));
-    //     threadRefresh.start();
-    // }
+    public void initRefresh() {
+        Thread threadRefresh = new Thread(new PainelRefresh(jPanel2));
+        threadRefresh.start();
+    }
 
     public static void main(String args[]) {
         EventQueue.invokeLater(new Runnable() {
@@ -72,7 +72,7 @@ public class FrameUI extends JFrame {
                 FrameUI frame = new FrameUI();
                 frame.setVisible(true);
 
-                // frame.initRefresh();
+                frame.initRefresh();
 
                 frame.initThreadFactory();
                 frame.initThreadFactoryCar();
