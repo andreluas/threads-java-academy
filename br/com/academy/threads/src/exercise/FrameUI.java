@@ -46,10 +46,8 @@ public class FrameUI extends JFrame {
 	}
 
 	public void initThreadFactoryCar() {
-		// for (Car car : jPanel2.carros) {
 			Thread threadFactoryCarros = new Thread(new AbasteceCarros(factory, jPanel2.carros));
 			threadFactoryCarros.start();
-		// }
 	}
 
 	public void initMovimentaCarro() {
@@ -69,6 +67,7 @@ public class FrameUI extends JFrame {
 			public void run() {
 				FrameUI frame = new FrameUI();
 				frame.setVisible(true);
+                
 				frame.initRefresh();
 
 				frame.initThreadFactory();
@@ -106,17 +105,8 @@ public class FrameUI extends JFrame {
 			for (int i = 0; i < 5; i++) {
 				Car c = new Car(i, rand.nextInt(800), rand.nextInt(600), rand.nextInt(50),
 						defineColor());
-				// c.move();
 				carros.add(c);
 			}
-
-			// TODO : Me ajude ! Meus carros não estão desenhando!!!
-			// int i = 0;
-			// while (i <= carros.size()) {
-			// carros.forEach(c -> c.move());
-			// Panel2.this.repaint();
-			// i++;
-			// }
 		}
 
 		@Override
