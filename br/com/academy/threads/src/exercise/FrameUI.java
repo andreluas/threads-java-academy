@@ -46,10 +46,10 @@ public class FrameUI extends JFrame {
 	}
 
 	public void initThreadFactoryCar() {
-		for (Car car : jPanel2.carros) {
-			Thread threadFactoryCarros = new Thread(new AbasteceCarros(factory, car));
+		// for (Car car : jPanel2.carros) {
+			Thread threadFactoryCarros = new Thread(new AbasteceCarros(factory, jPanel2.carros));
 			threadFactoryCarros.start();
-		}
+		// }
 	}
 
 	public void initMovimentaCarro() {
