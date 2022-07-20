@@ -68,8 +68,8 @@ public class FrameUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				FrameUI frame = new FrameUI();
-				frame.initRefresh();
 				frame.setVisible(true);
+				frame.initRefresh();
 
 				frame.initThreadFactory();
 				frame.initThreadFactoryCar();
@@ -103,8 +103,8 @@ public class FrameUI extends JFrame {
 
 			// Cria 10 novos carros
 			carros = new ArrayList<Car>();
-			for (int i = 0; i < 3; i++) {
-				Car c = new Car(rand.nextInt(10), rand.nextInt(800), rand.nextInt(600), rand.nextInt(50),
+			for (int i = 0; i < 5; i++) {
+				Car c = new Car(i, rand.nextInt(800), rand.nextInt(600), rand.nextInt(50),
 						defineColor());
 				// c.move();
 				carros.add(c);

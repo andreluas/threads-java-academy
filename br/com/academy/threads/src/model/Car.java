@@ -46,7 +46,7 @@ public class Car {
                 y = 0;
             }
             // consome o combustível
-            combustivel -= sortx;
+            combustivel -= rand.nextInt(20);
         }
     }
 
