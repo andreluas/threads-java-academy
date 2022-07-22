@@ -51,10 +51,11 @@ public class FrameUI extends JFrame {
 	}
 
 	public void initMovimentaCarro() {
-		for (Car car : jPanel2.carros) {
-			Thread threadFactoryMovimentaCarro = new Thread(new MovimentaCarro(car));
+		for(Car carro : jPanel2.carros) {			
+			Thread threadFactoryMovimentaCarro = new Thread(new MovimentaCarro(carro));
 			threadFactoryMovimentaCarro.start();
 		}
+
 	}
 
 	public void initRefresh() {
@@ -103,8 +104,7 @@ public class FrameUI extends JFrame {
 			// Cria 10 novos carros
 			carros = new ArrayList<Car>();
 			for (int i = 0; i < 3; i++) {
-				Car c = new Car(i, rand.nextInt(800), rand.nextInt(600), rand.nextInt(50),
-						defineColor());
+				Car c = new Car(i, rand.nextInt(800), rand.nextInt(600), rand.nextInt(50), defineColor());
 				carros.add(c);
 			}
 		}
