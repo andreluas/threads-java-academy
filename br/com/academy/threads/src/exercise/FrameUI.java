@@ -103,7 +103,7 @@ public class FrameUI extends JFrame {
 
 			// Cria 10 novos carros
 			carros = new ArrayList<Car>();
-			for (int i = 0; i < 3; i++) {
+			for (int i = 0; i < 10; i++) {
 				Car c = new Car(i, rand.nextInt(800), rand.nextInt(600), rand.nextInt(50), defineColor());
 				carros.add(c);
 			}

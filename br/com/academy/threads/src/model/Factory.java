@@ -12,7 +12,6 @@ public class Factory {
 
     public void abastecerFactory() {
         combustivel += 50;
-        System.out.println("Fabrica abastecida | combustivel: " + combustivel);
     }
 
     public void abastecerCar(Car car) {
