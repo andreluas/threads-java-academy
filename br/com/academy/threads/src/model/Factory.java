@@ -19,9 +19,7 @@ public class Factory {
 
         synchronized (this) {
             if (combustivel >= 50) {
-                car.setCombustivel(50);
-                System.out.println("ABASTECIDO");
-                
+                car.setCombustivel(50);                
                 combustivel -= 50;
             } else {
                 System.out.println("Fabrica sem combustivel");

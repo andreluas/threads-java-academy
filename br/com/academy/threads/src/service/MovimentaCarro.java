@@ -1,7 +1,5 @@
 package br.com.academy.threads.src.service;
 
-import java.util.List;
-
 import br.com.academy.threads.src.model.Car;
 
 public class MovimentaCarro implements Runnable {   

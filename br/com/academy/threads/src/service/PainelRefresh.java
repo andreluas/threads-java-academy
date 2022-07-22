@@ -14,7 +14,7 @@ public class PainelRefresh implements Runnable {
     public void run() {
         while(true) {
         	try {
-				Thread.sleep(2000);
+				Thread.sleep(500);
 				panel.repaint(); 
 			} catch (InterruptedException e) {
 				e.printStackTrace();

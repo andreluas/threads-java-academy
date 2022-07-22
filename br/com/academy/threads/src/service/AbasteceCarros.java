@@ -24,8 +24,8 @@ public class AbasteceCarros implements Runnable {
                     try {
                         System.out.println("Abastecendo carro: " + car.getId());
                         factory.abastecerCar(car);
-                        System.out.println(car.getId() + "abastecido");
-                        Thread.sleep(2000);
+                        System.out.println("Carro ID: " + car.getId() + " abastecido");
+                        Thread.sleep(5000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
