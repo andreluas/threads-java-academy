@@ -1,3 +1,7 @@
+# Integrantes
+  - André Almeida
+  - Jonathan Felix
+
 # Descrição
 
 Nesse exercício de Java você vai precisar usar os conhecimentos aprendidos para  auxiliar uma empresa a desenvolver um simulador de Tráfego.
