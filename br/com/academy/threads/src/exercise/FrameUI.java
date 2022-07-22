@@ -46,8 +46,8 @@ public class FrameUI extends JFrame {
 	}
 
 	public void initThreadFactoryCar() {
-			Thread threadFactoryCarros = new Thread(new AbasteceCarros(factory, jPanel2.carros));
-			threadFactoryCarros.start();
+		Thread threadFactoryCarros = new Thread(new AbasteceCarros(factory, jPanel2.carros));
+		threadFactoryCarros.start();
 	}
 
 	public void initMovimentaCarro() {
@@ -67,7 +67,7 @@ public class FrameUI extends JFrame {
 			public void run() {
 				FrameUI frame = new FrameUI();
 				frame.setVisible(true);
-                
+
 				frame.initRefresh();
 
 				frame.initThreadFactory();

@@ -11,8 +11,8 @@ public class Factory {
     }
 
     public void abastecerFactory() {
-
         combustivel += 50;
+        System.out.println("Fabrica abastecida | combustivel: " + combustivel);
     }
 
     public void abastecerCar(Car car) {
@@ -21,9 +21,6 @@ public class Factory {
             if (combustivel >= 50) {
                 car.setCombustivel(50);                
                 combustivel -= 50;
-            } else {
-                System.out.println("Fabrica sem combustivel");
-                
             }
         }
     }

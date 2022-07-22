@@ -16,7 +16,7 @@ public class AbasteceFabrica implements Runnable {
             try {
                 System.out.println("Fabrica com: " + factory.getCombustivel() + " litros.");
                 factory.abastecerFactory();
-                Thread.sleep(3000);
+                Thread.sleep(30000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

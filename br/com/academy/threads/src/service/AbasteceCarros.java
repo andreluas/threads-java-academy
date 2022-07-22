@@ -33,27 +33,4 @@ public class AbasteceCarros implements Runnable {
             }
         }
     }
-
-    // private Car car;
-
-    // public AbasteceCarros(Factory factory, Car car) {
-    // this.factory = factory;
-    // this.car = car;
-    // }
-
-    // @Override
-    // public void run() {
-    // while (true) {
-    // try {
-    // if (this.car.getCombustivel() <= 0) {
-    // System.out.println("Abastecendo carro: " + car.getId());
-    // Thread.sleep(2000);
-    // factory.abastecerCar(car);
-    // System.out.println(car.getId() + "abastecido");
-    // }
-    // } catch (InterruptedException e) {
-    // e.printStackTrace();
-    // }
-    // }
-    // }
 }

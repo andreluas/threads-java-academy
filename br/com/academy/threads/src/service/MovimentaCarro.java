@@ -2,7 +2,7 @@ package br.com.academy.threads.src.service;
 
 import br.com.academy.threads.src.model.Car;
 
-public class MovimentaCarro implements Runnable {   
+public class MovimentaCarro implements Runnable {
 
     private Car car;
 
@@ -17,7 +17,7 @@ public class MovimentaCarro implements Runnable {
                 if (car.getCombustivel() > 0) {
                     System.out.println("Movendo carro: " + car.getId() + " combustivel: " + car.getCombustivel());
                     car.move();
-                    Thread.sleep(5000);
+                    Thread.sleep(3000);
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
